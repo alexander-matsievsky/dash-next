@@ -1,0 +1,36 @@
+{
+  "author": "Alexander Matsievsky <matsievsky@scrapinghub.com>",
+  "bugs": {
+    "url": "https://github.com/alexander-matsievsky/dash-next/issues"
+  },
+  "description": "Experimental UI enhancements for Scrapinghub dashboard",
+  "devDependencies": {
+    "standard": "^14.3.1",
+    "standard-version": "^7.0.1"
+  },
+  "homepage": "https://github.com/alexander-matsievsky/dash-next#readme",
+  "keywords": [
+    "Scrapinghub",
+    "WebExtensions",
+    "dashboard"
+  ],
+  "license": "ISC",
+  "main": "manifest.json",
+  "name": "dash-next",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexander-matsievsky/dash-next.git"
+  },
+  "scripts": {
+    "lint": "standard --fix",
+    "release": "standard-version"
+  },
+  "standard": {
+    "globals": [
+      "chrome",
+      "fetch"
+    ]
+  },
+  "version": "0.0.0"
+}
