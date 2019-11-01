@@ -1,0 +1,27 @@
+{
+  "background": {
+    "scripts": [
+      "background/router.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "content_scripts/job-stats.js",
+        "content_scripts/router.js"
+      ],
+      "matches": [
+        "*://app.scrapinghub.com/*"
+      ]
+    }
+  ],
+  "description": "Experimental UI enhancements for Scrapinghub dashboard",
+  "manifest_version": 2,
+  "name": "Dash:next",
+  "permissions": [
+    "*://app.scrapinghub.com/*",
+    "*://storage.scrapinghub.com/*",
+    "tabs"
+  ],
+  "version": "0.0.0"
+}
