@@ -7,7 +7,8 @@
   "content_scripts": [
     {
       "js": [
-        "content_scripts/job-stats.js",
+        "vendor/webcomponents-bundle.js",
+        "content_scripts/JobStats.js",
         "content_scripts/router.js"
       ],
       "matches": [
