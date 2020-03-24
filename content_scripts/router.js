@@ -1,10 +1,12 @@
-const routes = [{
-  // eslint-disable-next-line no-undef
-  handler: jobStats,
-  pattern: new RegExp('^/p/(?<projectId>\\d+)/(?<spiderId>\\d+)/(?<jobId>\\d+)$')
-}]
+const routes = [
+  {
+    // eslint-disable-next-line no-undef
+    handler: JobStats.inject,
+    pattern: new RegExp('^/p/(?<projectId>\\d+)/(?<spiderId>\\d+)/(?<jobId>\\d+)$')
+  }
+]
 
-const dispatchRoute = ({ type, url }) => {
+function dispatchRoute ({ type, url }) {
   url = new URL(url)
   if (type !== 'router' || url.origin !== 'https://app.scrapinghub.com') return
   for (const { handler, pattern } of routes) {
@@ -14,9 +16,9 @@ const dispatchRoute = ({ type, url }) => {
 }
 
 [
-  'https://cdn.jsdelivr.net/npm/vega@5.7.2',
-  'https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.10',
-  'https://cdn.jsdelivr.net/npm/vega-embed@5.1.3'
+  'https://cdn.jsdelivr.net/npm/vega@5.10.0',
+  'https://cdn.jsdelivr.net/npm/vega-lite@4.8.1',
+  'https://cdn.jsdelivr.net/npm/vega-embed@6.5.1'
 ].reduce(
   async (loaded, src) => {
     await loaded
