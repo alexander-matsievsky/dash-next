@@ -3,6 +3,11 @@ const routes = [
     // eslint-disable-next-line no-undef
     handler: JobStats.inject,
     pattern: new RegExp('^/p/(?<projectId>\\d+)/(?<spiderId>\\d+)/(?<jobId>\\d+)$')
+  },
+  {
+    // eslint-disable-next-line no-undef
+    handler: PeriodicJobs.inject,
+    pattern: new RegExp('^/p/(?<projectId>\\d+)/periodic-jobs$')
   }
 ]
 

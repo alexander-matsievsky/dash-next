@@ -9,6 +9,7 @@
       "js": [
         "vendor/webcomponents-bundle.js",
         "content_scripts/JobStats.js",
+        "content_scripts/PeriodicJobs.js",
         "content_scripts/router.js"
       ],
       "matches": [
