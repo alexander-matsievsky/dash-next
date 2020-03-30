@@ -54,7 +54,7 @@ class PeriodicJobs extends HTMLElement {
           return periodicJob
         })
       )
-    return calendar.flatMap(date => {
+    const schedule = calendar.flatMap(date => {
       const schedule = periodicJobs
         .filter(periodicJob =>
           (periodicJob.month === '*' || +periodicJob.month === date.month) &&
@@ -65,6 +65,18 @@ class PeriodicJobs extends HTMLElement {
       return schedule.length ? schedule : { ...date, periodicjob: 0 }
     }).sort((a, b) =>
       a.dayofmonth - b.dayofmonth || a.spider_name.localeCompare(b.spider_name)
+    )
+    let spiderNamesMap = schedule.reduce((spiderNamesMap, schedule) => {
+      const spiderNames = spiderNamesMap.get(schedule.dayofmonth) || new Set()
+      spiderNames.add(schedule.spider_name)
+      spiderNamesMap.set(schedule.dayofmonth, spiderNames)
+      return spiderNamesMap
+    }, new Map())
+    spiderNamesMap = Object.fromEntries(
+      [...spiderNamesMap.entries()].map(([k, v]) => [k, Array.from(v).sort().join('\n')])
+    )
+    return schedule.map(schedule =>
+      Object.assign(schedule, { spider_names: spiderNamesMap[schedule.dayofmonth] })
     )
   }
 
@@ -80,7 +92,7 @@ class PeriodicJobs extends HTMLElement {
           orient: 'left'
         },
         view: {
-          continuousHeight: 300,
+          continuousHeight: 360,
           continuousWidth: 400,
           stroke: 'transparent'
         }
@@ -109,6 +121,11 @@ class PeriodicJobs extends HTMLElement {
                 field: 'periodicjob',
                 title: 'Jobs',
                 type: 'quantitative'
+              },
+              {
+                field: 'spider_names',
+                title: 'Spiders',
+                type: 'ordinal'
               }
             ],
             x: {
@@ -122,15 +139,15 @@ class PeriodicJobs extends HTMLElement {
               type: 'ordinal'
             }
           },
-          height: 600,
+          height: 360,
           mark: {
             cornerRadius: 5,
-            height: 95,
+            height: 55,
             type: 'rect',
-            width: 95
+            width: 55
           },
           title: title,
-          width: 700
+          width: 420
         },
         {
           encoding: {
@@ -144,6 +161,11 @@ class PeriodicJobs extends HTMLElement {
                 field: 'periodicjob',
                 title: 'Jobs',
                 type: 'quantitative'
+              },
+              {
+                field: 'spider_names',
+                title: 'Spiders',
+                type: 'ordinal'
               }
             ],
             x: {
@@ -157,13 +179,13 @@ class PeriodicJobs extends HTMLElement {
               type: 'ordinal'
             }
           },
-          height: 600,
+          height: 360,
           mark: {
             color: 'white',
-            fontSize: 50,
+            fontSize: 30,
             type: 'text'
           },
-          width: 700
+          width: 420
         }
       ]
     }
