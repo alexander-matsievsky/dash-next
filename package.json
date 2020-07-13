@@ -6,7 +6,7 @@
   "description": "Experimental UI enhancements for Scrapinghub dashboard",
   "devDependencies": {
     "standard": "^14.3.3",
-    "standard-version": "^7.1.0"
+    "standard-version": "^8.0.1"
   },
   "homepage": "https://github.com/alexander-matsievsky/dash-next#readme",
   "keywords": [
