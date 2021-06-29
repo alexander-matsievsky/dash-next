@@ -5,8 +5,8 @@
   },
   "description": "Experimental UI enhancements for Zyte dashboard",
   "devDependencies": {
-    "standard": "^14.3.3",
-    "standard-version": "^7.1.0"
+    "standard": "^16.0.3",
+    "standard-version": "^9.3.0"
   },
   "homepage": "https://github.com/alexander-matsievsky/dash-next#readme",
   "keywords": [
