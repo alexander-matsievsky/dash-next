@@ -134,7 +134,7 @@ class JobStats extends HTMLElement {
             const countChangePct = +(countChange / countPrev * 100 || 0).toFixed(2)
             return {
               'finished on': finishedTime,
-              'job href': `https://app.scrapinghub.com/p/${job.job_key}`,
+              'job href': `https://app.zyte.com/p/${job.job_key}`,
               'job key': job.job_key,
               'job number': +job.job_key.split('/')[2],
               'Δcount %': Math.max(-100, Math.min(countChangePct, 100)),
@@ -158,7 +158,7 @@ class JobStats extends HTMLElement {
       background: 'white',
       config: { mark: { tooltip: null } },
       datasets: datasets,
-      title: `https://app.scrapinghub.com/p/${this.jobKey} ${this.spiderName}`,
+      title: `https://app.zyte.com/p/${this.jobKey} ${this.spiderName}`,
       vconcat: Object.keys(datasets).map(title => ({
         columns: columns,
         data: { name: title },

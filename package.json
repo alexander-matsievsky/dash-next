@@ -1,17 +1,17 @@
 {
-  "author": "Alexander Matsievsky <matsievsky@scrapinghub.com>",
+  "author": "Alexander Matsievsky <matsievsky@zyte.com>",
   "bugs": {
     "url": "https://github.com/alexander-matsievsky/dash-next/issues"
   },
-  "description": "Experimental UI enhancements for Scrapinghub dashboard",
+  "description": "Experimental UI enhancements for Zyte dashboard",
   "devDependencies": {
     "standard": "^14.3.3",
     "standard-version": "^7.1.0"
   },
   "homepage": "https://github.com/alexander-matsievsky/dash-next#readme",
   "keywords": [
-    "Scrapinghub",
     "WebExtensions",
+    "Zyte",
     "dashboard"
   ],
   "license": "ISC",

@@ -1,6 +1,6 @@
 # Dash:next
 
-Experimental UI enhancements for Scrapinghub [dashboard](https://app.scrapinghub.com/) via browser extension.
+Experimental UI enhancements for Zyte [dashboard](https://app.zyte.com/) via browser extension.
 
 ## Purpose
 
@@ -11,7 +11,7 @@ The successful ones might end up being incorporated into Dash.
 
 1. `job-stats`
 
-    Adds chronological stats data viz to the main job page (i.e. `https://app.scrapinghub.com/p/*/*/*`).
+    Adds chronological stats data viz to the main job page (i.e. `https://app.zyte.com/p/*/*/*`).
     Every stats field is displayed as a time series of relative changes for the last 7 jobs.
     The obtained data viz can be exported as SVG/PNG file.
 

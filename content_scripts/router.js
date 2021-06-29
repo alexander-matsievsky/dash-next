@@ -13,7 +13,7 @@ const routes = [
 
 function dispatchRoute ({ type, url }) {
   url = new URL(url)
-  if (type !== 'router' || url.origin !== 'https://app.scrapinghub.com') return
+  if (type !== 'router' || url.origin !== 'https://app.zyte.com') return
   for (const { handler, pattern } of routes) {
     const match = url.pathname.match(pattern)
     if (match) handler(match.groups)

@@ -13,15 +13,15 @@
         "content_scripts/router.js"
       ],
       "matches": [
-        "*://app.scrapinghub.com/*"
+        "*://app.zyte.com/*"
       ]
     }
   ],
-  "description": "Experimental UI enhancements for Scrapinghub dashboard",
+  "description": "Experimental UI enhancements for Zyte dashboard",
   "manifest_version": 2,
   "name": "Dash:next",
   "permissions": [
-    "*://app.scrapinghub.com/*",
+    "*://app.zyte.com/*",
     "*://storage.scrapinghub.com/*",
     "tabs"
   ],
